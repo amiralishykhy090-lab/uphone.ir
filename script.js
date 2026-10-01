@@ -1319,6 +1319,41 @@ document.addEventListener(
 
 
 
+function validateCustomer() {
+
+    const nameInput = document.getElementById("customerName");
+    const phoneInput = document.getElementById("customerPhone");
+    const addressInput = document.getElementById("customerAddress");
+
+    // بررسی وجود فیلدها
+    if (!nameInput || !phoneInput || !addressInput) {
+        console.error("فیلدهای اطلاعات مشتری پیدا نشدند.");
+        return false;
+    }
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const address = addressInput.value.trim();
+
+    // بررسی خالی نبودن اطلاعات
+    if (name === "" || phone === "" || address === "") {
+        showSmallNotice("لطفاً تمام اطلاعات را تکمیل کنید.");
+        return false;
+    }
+
+    // فقط یک شرط برای شماره تلفن:
+    // دقیقاً 11 رقم و رقم اول حتماً 0 باشد
+    const phoneIsValid = /^0[0-9]{10}$/.test(phone);
+
+    if (!phoneIsValid) {
+        showSmallNotice("شماره تلفن باید دقیقاً ۱۱ رقمی و با ۰ شروع شود.");
+        return false;
+    }
+
+    return true;
+}
+
+
 /* =====================================================
    INITIALIZE
 ===================================================== */
