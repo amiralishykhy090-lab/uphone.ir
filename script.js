@@ -562,54 +562,39 @@ function updateCheckout() {
    CUSTOMER VALIDATION
 ===================================================== */
 
+
 function validateCustomer() {
 
-    const name =
-        document.getElementById(
-            "customerName"
-        ).value.trim();
+    const nameInput = document.getElementById("customerName");
+    const phoneInput = document.getElementById("customerPhone");
+    const addressInput = document.getElementById("customerAddress");
 
-
-    const phone =
-        document.getElementById(
-            "customerPhone"
-        ).value.trim();
-
-
-    const address =
-        document.getElementById(
-            "customerAddress"
-        ).value.trim();
-
-
-    if (!name || !phone || !address) {
-
-        showSmallNotice(
-            "لطفاً تمام اطلاعات را تکمیل کنید."
-        );
-
+    // بررسی وجود فیلدها
+    if (!nameInput || !phoneInput || !addressInput) {
+        console.error("فیلدهای اطلاعات مشتری پیدا نشدند.");
         return false;
-
     }
 
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const address = addressInput.value.trim();
 
-    if (
-        !/^0?9\d{9}$/.test(
-            phone.replace(/\s/g, "")
-        )
-    ) {
-
-        showSmallNotice(
-            "شماره تماس وارد شده صحیح نیست."
-        );
-
+    // بررسی خالی نبودن اطلاعات
+    if (name === "" || phone === "" || address === "") {
+        showSmallNotice("لطفاً تمام اطلاعات را تکمیل کنید.");
         return false;
-
     }
 
+    // فقط یک شرط برای شماره تلفن:
+    // دقیقاً 11 رقم و رقم اول حتماً 0 باشد
+    const phoneIsValid = /^0[0-9]{10}$/.test(phone);
+
+    if (!phoneIsValid) {
+        showSmallNotice("شماره تلفن باید دقیقاً ۱۱ رقمی و با ۰ شروع شود.");
+        return false;
+    }
 
     return true;
-
 }
 
 
