@@ -154,7 +154,282 @@
 </aside>
 <main>
 
+<!-- ===================== ABOUT US : فقط بخش MAIN ===================== -->
+<!-- این فایل را داخل صفحهٔ about.html، بین هدر و فوتر خودتان بگذارید -->
+<!-- همهٔ کلاس‌ها با ab- شروع می‌شوند تا با style.css سایت تداخل نکنند -->
 
+<style>
+.ab{
+  --b1:#0079b1; --b2:#005a87; --b3:#7fd6ff; --b4:#e6f5fd;
+  --ink:#0b2433; --muted:#5b7384; --bg:#f4f9fc;
+  --sh:0 18px 50px rgba(0,90,135,.13);
+  font-family:"Vazirmatn",Tahoma,sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;overflow-x:hidden;direction:rtl
+}
+.ab *{box-sizing:border-box}
+.ab h1,.ab h2,.ab h3,.ab p{margin:0}
+.ab a{text-decoration:none;color:inherit}
+.ab .ab-wrap{width:min(1140px,92%);margin:auto}
+
+/* hero */
+.ab .ab-hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,#00314d 0%,#005a87 45%,#0079b1 100%)}
+.ab .ab-blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:ab-drift 14s ease-in-out infinite alternate}
+.ab .ab-blob.a{width:420px;height:420px;background:#00a6e8;top:-120px;right:-80px}
+.ab .ab-blob.b{width:360px;height:360px;background:#7fd6ff;bottom:-140px;left:-60px;animation-delay:-5s;opacity:.32}
+.ab .ab-blob.c{width:240px;height:240px;background:#2b6cff;top:40%;left:38%;animation-delay:-9s;opacity:.28}
+@keyframes ab-drift{to{transform:translate(50px,40px) scale(1.15)}}
+.ab .ab-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1.2px,transparent 1.2px);background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(circle,#000 20%,transparent 75%);mask-image:radial-gradient(circle,#000 20%,transparent 75%)}
+.ab .ab-hero .ab-wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:70px 0 110px}
+.ab .ab-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:14px;backdrop-filter:blur(8px)}
+.ab .ab-tag i{width:8px;height:8px;border-radius:50%;background:#5dffb0;animation:ab-pulse 2s infinite}
+@keyframes ab-pulse{0%{box-shadow:0 0 0 0 #5dffb0}70%,100%{box-shadow:0 0 0 10px transparent}}
+.ab .ab-hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.4;margin:18px 0}
+.ab .ab-grad{background:linear-gradient(90deg,#7fd6ff,#fff,#7fd6ff);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ab-shine 5s linear infinite}
+@keyframes ab-shine{to{background-position:200% 0}}
+.ab .ab-hero p{font-size:17px;color:#d6eefb;max-width:540px}
+.ab .ab-btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.ab .ab-btn{padding:13px 28px;border-radius:99px;font-weight:700;font-size:15px;transition:.3s;display:inline-block;cursor:pointer;font-family:inherit}
+.ab .ab-btn.p{background:#fff;color:var(--b2);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.ab .ab-btn.p:hover{transform:translateY(-4px)}
+.ab .ab-btn.g{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.ab .ab-btn.g:hover{background:rgba(255,255,255,.15);transform:translateY(-4px)}
+
+/* phone */
+.ab .ab-stage{position:relative;height:450px;display:grid;place-items:center;perspective:900px}
+.ab .ab-ring{position:absolute;width:380px;height:380px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.35);animation:ab-spin 28s linear infinite}
+.ab .ab-ring.r2{width:290px;height:290px;animation-direction:reverse;animation-duration:20s;border-color:rgba(127,214,255,.5)}
+@keyframes ab-spin{to{transform:rotate(360deg)}}
+.ab .ab-phone{position:relative;width:210px;height:430px;border-radius:40px;padding:10px;
+  background:linear-gradient(145deg,#e9f7ff,#8bc9e8 40%,#0f5f86);box-shadow:0 40px 80px rgba(0,20,40,.5),inset 0 0 0 2px rgba(255,255,255,.5);
+  animation:ab-float 6s ease-in-out infinite;transition:transform .2s}
+@keyframes ab-float{50%{margin-top:-22px}}
+.ab .ab-screen{height:100%;border-radius:31px;overflow:hidden;position:relative;background:linear-gradient(160deg,#00a6e8,#0057b8 55%,#002b5c);display:flex;flex-direction:column;align-items:center;padding-top:50px;color:#fff}
+.ab .ab-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:78px;height:22px;background:#000;border-radius:20px}
+.ab .ab-clk{font-size:46px;font-weight:300;line-height:1.2;margin-top:14px}
+.ab .ab-screen small{opacity:.8;font-size:12px}
+.ab .ab-chips{margin-top:auto;margin-bottom:22px;width:84%;display:grid;gap:8px}
+.ab .ab-chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:6px 10px;font-size:11.5px;display:flex;justify-content:space-between}
+.ab .ab-badge{position:absolute;background:rgba(255,255,255,.95);color:var(--b2);border-radius:16px;padding:10px 16px;font-weight:700;font-size:13px;box-shadow:var(--sh);animation:ab-float 5s ease-in-out infinite}
+.ab .ab-badge.x{top:50px;left:0;animation-delay:-2s}
+.ab .ab-badge.y{bottom:70px;right:-6px;animation-delay:-3.5s}
+
+/* common */
+.ab .ab-sec{padding:90px 0;position:relative}
+.ab .ab-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.ab .ab-head span{color:var(--b1);font-weight:700;font-size:14px;background:var(--b4);padding:5px 16px;border-radius:99px}
+.ab .ab-head h2{font-size:clamp(25px,3.4vw,38px);font-weight:800;margin:16px 0 8px}
+.ab .ab-head p{color:var(--muted)}
+
+/* stats */
+.ab .ab-stats{margin-top:-70px;padding:0;z-index:5}
+.ab .ab-sg{background:#fff;border-radius:28px;box-shadow:var(--sh);display:grid;grid-template-columns:repeat(4,1fr);padding:32px 10px}
+.ab .ab-st{text-align:center;padding:6px;border-left:1px solid #e3eef5}
+.ab .ab-st:last-child{border:0}
+.ab .ab-st b{display:block;font-size:44px;font-weight:800;line-height:1.3;background:linear-gradient(135deg,var(--b1),#00a6e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ab .ab-st span{color:var(--muted);font-size:14px}
+
+/* story */
+.ab .ab-story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.ab .ab-story h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:16px;line-height:1.6}
+.ab .ab-story p{color:var(--muted);margin-bottom:14px}
+.ab .ab-quote{position:relative;background:linear-gradient(135deg,var(--b2),var(--b1));color:#fff;border-radius:28px;padding:42px 34px;box-shadow:var(--sh);overflow:hidden}
+.ab .ab-quote::after{content:"”";position:absolute;top:-30px;left:18px;font-size:170px;line-height:1;opacity:.14}
+.ab .ab-quote p{font-size:19px;font-weight:600;line-height:2.1;position:relative}
+.ab .ab-quote small{display:block;margin-top:16px;opacity:.8;position:relative}
+
+/* cards */
+.ab .ab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ab .ab-card{background:#fff;border-radius:22px;padding:32px 28px;box-shadow:0 6px 24px rgba(0,90,135,.07);position:relative;overflow:hidden;transition:transform .25s,box-shadow .35s;border:1px solid #e6f1f7}
+.ab .ab-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(0,166,232,.18),transparent 55%);opacity:0;transition:.3s}
+.ab .ab-card:hover{box-shadow:var(--sh)}
+.ab .ab-card:hover::before{opacity:1}
+.ab .ab-ic{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:25px;margin-bottom:18px;color:#fff;background:linear-gradient(135deg,var(--b1),#00a6e8);box-shadow:0 10px 22px rgba(0,121,177,.35);position:relative}
+.ab .ab-card h3{font-size:19px;margin-bottom:6px;position:relative}
+.ab .ab-card p{color:var(--muted);font-size:15px;position:relative}
+
+/* steps */
+.ab .ab-steps{background:linear-gradient(180deg,#fff,var(--b4))}
+.ab .ab-tl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.ab .ab-tl::before{content:"";position:absolute;top:34px;right:12%;left:12%;height:3px;background:linear-gradient(90deg,var(--b1),var(--b3));border-radius:3px;transform-origin:right;transform:scaleX(0);transition:transform 1.6s ease}
+.ab .ab-tl.in::before{transform:scaleX(1)}
+.ab .ab-sp{text-align:center;position:relative}
+.ab .ab-num{width:68px;height:68px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff;background:linear-gradient(135deg,var(--b2),var(--b1));border:5px solid #fff;box-shadow:0 10px 26px rgba(0,121,177,.35);position:relative;z-index:1}
+.ab .ab-sp h3{font-size:17px;margin-bottom:4px}
+.ab .ab-sp p{color:var(--muted);font-size:14px}
+
+/* cta */
+.ab .ab-cta{padding:60px 0 90px}
+.ab .ab-cb{position:relative;overflow:hidden;border-radius:34px;padding:60px 36px;text-align:center;color:#fff;background:linear-gradient(135deg,#00314d,var(--b2) 50%,var(--b1))}
+.ab .ab-cb h2{font-size:clamp(24px,3.2vw,36px);font-weight:800;margin-bottom:10px;position:relative}
+.ab .ab-cb p{color:#d6eefb;position:relative}
+.ab .ab-cb .ab-btns{justify-content:center;position:relative}
+.ab .ab-tel{direction:ltr;unicode-bidi:plaintext;letter-spacing:1px}
+
+/* reveal */
+.ab .ab-rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.19,1,.22,1)}
+.ab .ab-rv.in{opacity:1;transform:none}
+.ab .d1{transition-delay:.1s}.ab .d2{transition-delay:.2s}
+
+@media(max-width:900px){
+  .ab .ab-hero .ab-wrap{grid-template-columns:1fr;text-align:center}
+  .ab .ab-hero p{margin:auto}.ab .ab-btns{justify-content:center}
+  .ab .ab-stage{height:420px;order:-1}
+  .ab .ab-grid{grid-template-columns:1fr 1fr}
+  .ab .ab-tl{grid-template-columns:1fr 1fr;row-gap:34px}.ab .ab-tl::before{display:none}
+  .ab .ab-sg{grid-template-columns:1fr 1fr;row-gap:18px}.ab .ab-st:nth-child(2){border:0}
+  .ab .ab-story{grid-template-columns:1fr}
+}
+@media(max-width:560px){.ab .ab-grid{grid-template-columns:1fr}.ab .ab-stage{height:380px}.ab .ab-phone{transform:scale(.88)}}
+@media(prefers-reduced-motion:reduce){.ab *{animation:none!important;transition:none!important}.ab .ab-rv{opacity:1;transform:none}}
+</style>
+
+<main class="ab">
+
+  <!-- Hero -->
+  <div class="ab-hero">
+    <div class="ab-blob a"></div><div class="ab-blob b"></div><div class="ab-blob c"></div><div class="ab-dots"></div>
+    <div class="ab-wrap">
+      <div>
+        <span class="ab-tag"><i></i> سلام، ما یوفون هستیم</span>
+        <h1>آیفونی بخرید که <span class="ab-grad">از قبل می‌شناسیدش</span></h1>
+        <p>ما فروشگاه بزرگی با شعارهای قلمبه‌سلمبه نیستیم. فقط دوست داریم وقتی می‌خواهید آیفون بخرید، پیش از پرداخت بدانید دقیقاً چه چیزی تحویل می‌گیرید. برای همین هر مدل را با مشخصات و گزارش‌هایش کنار هم گذاشته‌ایم.</p>
+        <div class="ab-btns">
+          <a href="./index.html#products" class="ab-btn p">محصولات را ببینید</a>
+          <a href="#ab-contact" class="ab-btn g">با ما حرف بزنید</a>
+        </div>
+      </div>
+      <div class="ab-stage" id="abStage">
+        <div class="ab-ring"></div><div class="ab-ring r2"></div>
+        <div class="ab-phone" id="abPhone">
+          <div class="ab-screen">
+            <div class="ab-notch"></div>
+            <small>امروز</small>
+            <div class="ab-clk" id="abClk">۱۰:۰۹</div>
+            <div class="ab-chips">
+              <div class="ab-chip"><span>پردازنده</span><b>۹۸٪</b></div>
+              <div class="ab-chip"><span>گرافیک</span><b>۹۶٪</b></div>
+              <div class="ab-chip"><span>نمایشگر</span><b>۹۹٪</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="ab-badge x">✓ گزارش سخت‌افزاری</div>
+        <div class="ab-badge y">✓ گزارش نرم‌افزاری</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Story -->
+  <section class="ab-sec">
+    <div class="ab-wrap">
+      <div class="ab-story">
+        <div class="ab-rv">
+          <div class="ab-head" style="text-align:right;margin:0 0 14px"><span>داستان ما</span></div>
+          <h2>می‌خواستیم خرید گوشی، کمتر شبیه قمار باشد</h2>
+          <p>همه‌مان حداقل یک بار گوشی خریده‌ایم و بعد فهمیده‌ایم چیزی که در ذهنمان بود با چیزی که دستمان رسید فرق دارد. یوفون از همین دغدغه ساخته شد.</p>
+          <p>اینجا سعی می‌کنیم همان چیزی را بنویسیم که خودمان دوست داشتیم قبل از خرید بدانیم: مشخصات واقعی، وضعیت سخت‌افزار و وضعیت نرم‌افزار، بدون شلوغ‌کاری.</p>
+        </div>
+        <div class="ab-quote ab-rv d1">
+          <p>قولی که به خودمان داده‌ایم ساده است: هر چیزی را که دربارهٔ یک گوشی می‌گوییم، باید بتوانید پیش از خرید بررسی کنید.</p>
+          <small>— تیم یوفون</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="ab-sec" style="padding-top:20px">
+    <div class="ab-wrap">
+      <div class="ab-head ab-rv"><span>چرا یوفون؟</span><h2>چیزهایی که برایمان مهم است</h2><p>نه وعدهٔ بزرگ، فقط کارهای کوچکی که خرید را راحت‌تر می‌کنند.</p></div>
+      <div class="ab-grid">
+        <div class="ab-card ab-rv"><div class="ab-ic">◎</div><h3>مشخصات روشن</h3><p>پردازنده، RAM، حافظه، نمایشگر و دوربین هر مدل را جدا و خوانا می‌بینید، نه لابه‌لای متن طولانی.</p></div>
+        <div class="ab-card ab-rv d1"><div class="ab-ic">⚙</div><h3>گزارش سخت‌افزاری</h3><p>عملکرد پردازنده، گرافیک و کیفیت نمایشگر را در یک گزارش کوتاه کنار هر گوشی می‌گذاریم.</p></div>
+        <div class="ab-card ab-rv d2"><div class="ab-ic">❖</div><h3>گزارش نرم‌افزاری</h3><p>نسخهٔ سیستم‌عامل و وضعیت پشتیبانی نرم‌افزاری را قبل از خرید می‌توانید ببینید.</p></div>
+        <div class="ab-card ab-rv"><div class="ab-ic">▤</div><h3>از SE تا جدیدترین‌ها</h3><p>مدل‌های مختلف در یک جا جمع شده‌اند تا لازم نباشد برای مقایسه چند سایت را باز کنید.</p></div>
+        <div class="ab-card ab-rv d1"><div class="ab-ic">✎</div><h3>سفارش بی‌دردسر</h3><p>محصول را انتخاب می‌کنید، خلاصهٔ سفارش را کپی می‌کنید و برای ما می‌فرستید. همین.</p></div>
+        <div class="ab-card ab-rv d2"><div class="ab-ic">☏</div><h3>یک تماس فاصله دارید</h3><p>سؤالی دارید؟ شمارهٔ ما همیشه همین پایین است و می‌توانید مستقیم زنگ بزنید.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="ab-sec ab-steps">
+    <div class="ab-wrap">
+      <div class="ab-head ab-rv"><span>روند خرید</span><h2>چهار قدم تا سفارش شما</h2><p>بدون ثبت‌نام طولانی و بدون پیچیدگی.</p></div>
+      <div class="ab-tl ab-rv" id="abTl">
+        <div class="ab-sp"><div class="ab-num">۱</div><h3>گوشی را پیدا کنید</h3><p>مدل مورد نظر را باز کنید و مشخصاتش را بخوانید.</p></div>
+        <div class="ab-sp"><div class="ab-num">۲</div><h3>اطلاعاتتان را بنویسید</h3><p>نام، شماره تماس و آدرس را وارد کنید.</p></div>
+        <div class="ab-sp"><div class="ab-num">۳</div><h3>سفارش را کپی کنید</h3><p>خلاصهٔ سفارش با یک کلیک کپی می‌شود.</p></div>
+        <div class="ab-sp"><div class="ab-num">۴</div><h3>برایمان بفرستید</h3><p>جدول را در روبیکا یا تلگرام برای ما بفرستید.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ab-cta" id="ab-contact">
+    <div class="ab-wrap">
+      <div class="ab-cb ab-rv">
+        <div class="ab-blob a" style="width:300px;height:300px"></div><div class="ab-blob b" style="width:260px;height:260px"></div>
+        <h2>سؤالی دارید؟ راحت زنگ بزنید</h2>
+        <p>خوشحال می‌شویم کمکتان کنیم، حتی اگر فقط برای مشورت باشد.</p>
+        <div class="ab-btns">
+          <a href="tel:09936494367" class="ab-btn p ab-tel">09936494367</a>
+          <a href="./index.html#products" class="ab-btn g">دیدن محصولات</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(()=>{
+  const root=document.querySelector('.ab'); if(!root) return;
+  const $=s=>root.querySelector(s), $$=s=>[...root.querySelectorAll(s)];
+  const fa=n=>n.toLocaleString('fa-IR');
+
+  // ساعت گوشی
+  const clk=$('#abClk');
+  const tick=()=>{clk.textContent=new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit',hour12:false})};
+  tick(); setInterval(tick,30000);
+
+  // شمارنده‌ها
+  const count=el=>{
+    const to=+el.dataset.count,t0=performance.now(),dur=1600;
+    const step=t=>{const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,4);
+      el.textContent=fa(Math.round(to*e)); if(p<1) requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  };
+
+  // ظاهر شدن هنگام اسکرول
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(count);
+    io.unobserve(e.target);
+  }),{threshold:.2});
+  $$('.ab-rv').forEach(el=>io.observe(el));
+
+  // نور و حالت سه‌بعدی کارت‌ها
+  $$('.ab-card').forEach(c=>{
+    c.addEventListener('mousemove',e=>{
+      const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');
+      c.style.transform=`perspective(700px) rotateX(${(.5-y)*8}deg) rotateY(${(x-.5)*8}deg) translateY(-6px)`;
+    });
+    c.addEventListener('mouseleave',()=>c.style.transform='');
+  });
+
+  // حرکت گوشی با موس
+  const st=$('#abStage'),ph=$('#abPhone');
+  st.addEventListener('mousemove',e=>{
+    const r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    ph.style.transform=`rotateY(${x*22}deg) rotateX(${-y*16}deg)`;
+  });
+  st.addEventListener('mouseleave',()=>ph.style.transform='');
+})();
+</script>
 
 
 
@@ -229,11 +504,6 @@
 
         <span>
             تمامی حقوق محفوظ است.
-        </span>
-
-        <span>
-            تمام حقوق محفوظ میباشد 
-
         </span>
 
     </div>
