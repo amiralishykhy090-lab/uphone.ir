@@ -3438,6 +3438,75 @@ footer {
 
 
 
+/* ============ موج بالای فوتر (فقط CSS، بدون تغییر در HTML) ============ */
+/* این کد را «آخر» فایل style.css بچسبانید تا روی استایل‌های قبلی فوتر غلبه کند. */
+
+footer#contact{
+  /* رنگ فوتر خودتان را اینجا بنویسید (همان رنگ فعلی فوتر) */
+  --footer-bg:#00263b;
+  /* رنگ موج پشتی که کمی روشن‌تر و محوتر است */
+  --wave-back:#0079b1;
+
+  position:relative;
+  background:var(--footer-bg);
+  margin-top:90px;            /* جا برای موج */
+}
+
+/* موج پشتی: روشن‌تر، آهسته‌تر، شکل متفاوت */
+footer#contact::before,
+footer#contact::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  pointer-events:none;
+  -webkit-mask-repeat:repeat-x;
+  mask-repeat:repeat-x;
+}
+
+footer#contact::before{
+  top:-98px; height:100px;
+  background:var(--wave-back);
+  opacity:.45;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C160,100 300,20 480,50 C640,78 760,98 920,60 C1060,22 1340,51 1440,70 L1440,100 L0,100 Z'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C160,100 300,20 480,50 C640,78 760,98 920,60 C1060,22 1340,51 1440,70 L1440,100 L0,100 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size:1900px 100px;
+  mask-size:1900px 100px;
+  animation:ftWaveBack 38s linear infinite;
+}
+
+/* موج جلویی: هم‌رنگ فوتر، نامتقارن و کمی نامرتب */
+footer#contact::after{
+  top:-78px; height:80px;
+  background:var(--footer-bg);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C120,20 240,95 380,62 C520,28 600,10 740,48 C880,86 960,100 1100,58 C1240,16 1340,93 1440,60 L1440,100 L0,100 Z'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C120,20 240,95 380,62 C520,28 600,10 740,48 C880,86 960,100 1100,58 C1240,16 1340,93 1440,60 L1440,100 L0,100 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size:1440px 80px;
+  mask-size:1440px 80px;
+  animation:ftWaveFront 24s linear infinite reverse;
+}
+
+@keyframes ftWaveBack{
+  from{-webkit-mask-position:0 0;mask-position:0 0}
+  to{-webkit-mask-position:1900px 0;mask-position:1900px 0}
+}
+@keyframes ftWaveFront{
+  from{-webkit-mask-position:0 0;mask-position:0 0}
+  to{-webkit-mask-position:1440px 0;mask-position:1440px 0}
+}
+
+/* موبایل: موج کوتاه‌تر */
+@media (max-width:600px){
+  footer#contact{margin-top:60px}
+  footer#contact::before{top:-58px;height:60px;-webkit-mask-size:1100px 60px;mask-size:1100px 60px}
+  footer#contact::after{top:-48px;height:50px;-webkit-mask-size:900px 50px;mask-size:900px 50px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  footer#contact::before,footer#contact::after{animation:none}
+}
+
+
+
 
 
 
